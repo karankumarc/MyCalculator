@@ -12,7 +12,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/edit_text"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -24,18 +24,21 @@
         android:layout_height="wrap_content"
         android:text="Copy Text"
         android:id="@+id/button"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/edit_text"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText" />
+        android:layout_alignRight="@+id/edit_text"
+        android:layout_alignEnd="@+id/edit_text"
+        android:onClick="copyEditText" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
-        android:id="@+id/textView"
+        android:id="@+id/text_view"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="copyEditText"
+        android:nestedScrollingEnabled="false" />
 </RelativeLayout>
