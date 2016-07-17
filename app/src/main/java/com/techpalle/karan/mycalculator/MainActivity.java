@@ -1,6 +1,5 @@
 package com.techpalle.karan.mycalculator;
 
-import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
     /*
     Declaration
      */
-    EditText editText;
+    EditText editTextFirst, editTextSecond;
     TextView textView; // = (TextView) findViewById(R.id.text_view); Causes runtime error (NullPointerException
 
     @Override
@@ -22,16 +21,30 @@ public class MainActivity extends AppCompatActivity {
 
         /* Initializing using findViewById
          */
-        editText = (EditText) findViewById(R.id.edit_text);
+        editTextFirst = (EditText) findViewById(R.id.edit_text_first_number);
+        editTextSecond = (EditText) findViewById(R.id.edit_text_second_number);
         textView = (TextView) findViewById(R.id.text_view);
     }
 
 
-    public void copyEditText(View view){
+    public void addTwoNumbers(View view){
         /*
         Write code to handle button click
          */
-        String textToBeCopied = editText.getText().toString();
-        textView.setText(textToBeCopied);
+        String firstNumberString = editTextFirst.getText().toString();
+        String secondNumberString = editTextSecond.getText().toString();
+
+        /*
+        Convert from String to Integers
+         */
+        int num1 = Integer.parseInt(firstNumberString);
+        int num2 = Integer.parseInt(secondNumberString);
+
+        int sum = num1+num2;
+
+        /*
+        Convert from Integer to String
+         */
+        textView.setText(""+sum);
     }
 }
